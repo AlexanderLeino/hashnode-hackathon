@@ -1,0 +1,21 @@
+{
+  "name": "hashnode-hackathon",
+  "version": "1.0.0",
+  "description": "![View 1](building.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderLeino/hashnode-hackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderLeino/hashnode-hackathon/issues"
+  },
+  "homepage": "https://github.com/AlexanderLeino/hashnode-hackathon#readme"
+}
