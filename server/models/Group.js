@@ -1,28 +1,36 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model} = require('mongoose')
 
 const Group = new Schema({
     groupName: {
         type: String,
         required: true,
-        unique: true,
+        unique: true
     },
     techNeeded: [{
         type: String,
+        unique: true
     }],
-
     aboutGroup: {
-        type: String,
+        type: String
     },
-
     category: {
         type: String,
+        required:true
     },
     adminId: {
         type: 'String',
-        required: true,
-    }
+        required: true
+    },
+    groupPosts: [{
+        type: Schema.Types.ObjectId,
+        ref:'Post'
+    }],
+    groupMembers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }]
 })
 
-const Group = model('Group', Group);
+const groupSchema = model('Group', Group);
   
-  module.exports = Group;
+  module.exports = groupSchema;

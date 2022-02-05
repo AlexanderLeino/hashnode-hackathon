@@ -37,21 +37,32 @@ const userData = [
         firstName: 'Henrick',
         lastName: 'TheMan',
         email: 'HenrickWasHere@gmail.com',
-        password: '',
+        password: 'NotHenricksPassword123',
     },
     {
         _id: userIds[4],
         firstName: 'Ricky',
         lastName: 'Bobby',
-        email: '',
-        password: '',
+        email: 'RickyBobby@gmail.com',
+        password: 'Number1',
     },
     {
         _id: userIds[5],
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
+        firstName: 'Bruce',
+        lastName: 'Wayne',
+        email: 'NotBatMan@gmail.com',
+        password: 'BrucyBoy123',
+    },   
+],
+
+const groupData = [
+    {
+        groupName: 'SourceFinder',
+        techNeeded: ['Javascript', 'MongoDb,', 'Web3', 'BlockChain'],
+        aboutGroup: 'This group is pretty new and we are looking for a lot of different personal please apply within.',
+        category: 'Web Development',
+        adminId: '1',
+        
     },
-    
+
 ]
