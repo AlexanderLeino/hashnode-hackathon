@@ -64,5 +64,35 @@ const groupData = [
         adminId: '1',
         
     },
+    {
+        groupName: 'Artists Are Us',
+        techNeeded: ['GraphQL'],
+        aboutGroup: 'This group is all about finding the best artists in LA.',
+        category: 'Web Development',
+        adminId: '2',
+    },
+    {
+        groupName: 'Football Fanatics',
+        techNeeded: ['Material UI'],
+        aboutGroup: 'Looking for people that are passionate about footaball.',
+        category: 'Web Development',
+        adminId: '3',
+    },
 
-]
+    {
+        groupName: 'The CSS Freaks',
+        techNeeded: ['Bootstrap'],
+        aboutGroup: 'We are looking for someone who is a data junkie but who isnt afraid to get freaky in the sheets if you know what we are saying',
+        category: 'Web Development',
+        adminId:'4',
+    },
+
+    {
+        groupName: 'Pokemon Coders',
+        techNeeded: ['MongoDb', 'Mongoose'],
+        aboutGroup: 'We are looking for someone that loves pokemon as much as we do',
+        category: 'Database',
+        adminId: '5',
+    }
+],
+
