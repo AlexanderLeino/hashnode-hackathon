@@ -22,8 +22,36 @@ const userSchema = new Schema (
         password: {
             type: String,
             required: true,
-        }
-    }
+        },
+        aboutMe: {
+            type: String,
+        },
+
+        socialLinks: {
+            type: String 
+        },
+
+        socialLinks2: {
+            type: String
+        },
+
+        socialLinks3: {
+            type: String
+        },
+        
+        affiliatedGroups: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Group'
+        }],
+
+        isAdmin: {
+            type: Schema.Types.ObjectId,
+            ref: 'Group',
+            default: null,
+        },
+
+
+    },
 )
 
 // hash user password
