@@ -1,0 +1,73 @@
+.searchBar {
+  width: 90vw;
+  height: 7vh;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  padding-bottom: 0.5rem;
+}
+
+input {
+  background: url("/Users/l/hashnode-hackathon/client/src/images/magnifying glass.png")
+    no-repeat scroll 7px 7px;
+  padding-left: 30px;
+  background-size: 15px;
+}
+
+.innerSearchBar {
+  width: 50vw;
+  height: 4vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px black solid;
+  outline: none;
+}
+
+@media only screen and (max-width: 1440px) {
+  input {
+    background-size: 8px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1440px) {
+  .searchBar {
+    padding-bottom: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .searchBar {
+    height: 8vw;
+  }
+}
+
+@media only screen and (max-width: 676px) {
+  .searchBar {
+    padding-bottom: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 488px) {
+  .searchBar {
+    padding-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .searchBar {
+    padding: 0.3rem;
+  }
+
+  .innerSearchBar {
+    margin-top: 0rem;
+  }
+}
+
+@media only screen and (max-width: 230px) {
+  .searchBar {
+    padding-bottom: 1rem;
+  }
+}
