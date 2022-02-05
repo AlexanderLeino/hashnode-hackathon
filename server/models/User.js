@@ -3,9 +3,10 @@ const bcrypt = require('bcrypt')
 
 const userSchema = new Schema (
     {
-        username: {
+        userName: {
             type: String,
             required: true,
+            unique: true,
         },
         firstName: {
             type: String,
@@ -27,15 +28,15 @@ const userSchema = new Schema (
             type: String,
         },
 
-        socialLinks: {
+        GithubLink: {
             type: String 
         },
 
-        socialLinks2: {
+        TwitterLink: {
             type: String
         },
 
-        socialLinks3: {
+        hashNodeLink: {
             type: String
         },
         

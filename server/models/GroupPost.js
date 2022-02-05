@@ -1,12 +1,22 @@
 const { Schema, model } = require('mongoose')
 
-const groupPost = new Schema ({
+const Post = new Schema ({
+    postDate: {
+        type: Date,
+        default: Date.now,
+        unique: true
+    },
     postContent: {
         type: String,
+        required: true
     },
+    postOrigin: {
+        type: Schema.Types.ObjectId,
+        ref: 'Group',
+    }
     
 })
 
-const User = model('groupPost', userSchema);
+const Post = model('Post', Post);
   
-  module.exports = User;
+module.exports = Post;
