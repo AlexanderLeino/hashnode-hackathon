@@ -1,4 +1,4 @@
-const { User, Group, GroupPost, Reply} = require('../models')
+const { User, Group, GroupPost, Replies} = require('../models')
 const { Types: { ObjectId } } = require('mongoose')
 const db = require('../config/connection')
 const Post = require('../models/GroupPost')
@@ -41,6 +41,7 @@ const userData = [
     
     {
         _id: userId[0],
+        userName: 'Alexander123',
         firstName: 'Alex',
         lastName: 'Leino',
         email: 'Alexander.Leino@yahoo.com',
@@ -49,6 +50,7 @@ const userData = [
     },
     {
         _id: userId[1],
+        userName: 'QH123',
         firstName: 'Q',
         lastName: 'H',
         email: 'QueueDeveloper@gmail.com',
@@ -57,6 +59,7 @@ const userData = [
     },
     {
         _id: userId[2],
+        userName:'TheSecondAlexIsHere',
         firstName: 'Alex',
         lastName: 'TheSecondAlex',
         email: 'NotAlex2Password@gmail.com',
@@ -65,6 +68,7 @@ const userData = [
     },
     {
         _id: userId[3],
+        userName:'Henrick123',
         firstName: 'Henrick',
         lastName: 'TheMan',
         email: 'HenrickWasHere@gmail.com',
@@ -73,6 +77,7 @@ const userData = [
     },
     {
         _id: userId[4],
+        userName:'AlwaysFirst',
         firstName: 'Ricky',
         lastName: 'Bobby',
         email: 'RickyBobby@gmail.com',
@@ -81,13 +86,14 @@ const userData = [
     },
     {
         _id: userId[5],
+        userName: 'Not Batman',
         firstName: 'Bruce',
         lastName: 'Wayne',
         email: 'NotBatMan@gmail.com',
         password: 'BrucyBoy123',
         affliatedGroups: [groupId[0]]
     },   
-],
+]
 
 const groupData = [
     {   
@@ -133,7 +139,7 @@ const groupData = [
         category: 'Database',
         adminId: '5',
     },
-],
+]
 
 const postData = [
     {
@@ -154,6 +160,7 @@ const postData = [
         postContent: 'This Post was created by Alex2, because hes a football fanatic',
         postOrigin: groupId[2]
     },
+    
     {
         _id: postId[3],
         postCreator: userId[3],
@@ -217,8 +224,8 @@ const seedData = async () => {
         await Post.insertMany(postData)
         console.log('============ Posts SEEDED =============')
 
-        await Reply.deleteMany({})
-        await Reply.insertMany(replyData)
+        await Replies.deleteMany({})
+        await Replies.insertMany(replyData)
         console.log('============ Replies SEEDED =============')
 
         process.exit(0)
