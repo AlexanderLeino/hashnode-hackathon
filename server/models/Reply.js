@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 
 const Reply = new Schema({
-    op: {
+    originalPost: {
         type: Schema.Types.ObjectId,
         ref: 'Post'
     },
