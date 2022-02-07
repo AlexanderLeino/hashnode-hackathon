@@ -44,7 +44,7 @@ const userSchema = new Schema (
             type: String,
         },
         
-        affiliatedGroups: [{
+        affliatedGroups: [{
             type: Schema.Types.ObjectId,
             ref: 'Group'
         }],
@@ -52,7 +52,6 @@ const userSchema = new Schema (
         isAdmin: {
             type: Schema.Types.ObjectId,
             ref: 'Group',
-            default: null,
         },
 
 

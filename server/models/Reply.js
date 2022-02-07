@@ -19,7 +19,9 @@ const Reply = new Schema({
     },
 })
 
-const postReplies = model('Reply', Reply)
+const Replies = model('Reply', Reply)
+
+module.exports = Replies
 
 
 

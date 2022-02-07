@@ -1,4 +1,5 @@
-const [ gql ] = require('apollo-server-express')
+const { gql } = require('apollo-server-express')
+
 
 const typeDefs = gql`
     type User {
@@ -24,14 +25,14 @@ const typeDefs = gql`
         aboutGroup: String
         category: String!
         adminId: String!
-        groupPosts: [Post]
+        groupPosts: [GroupPost]
         groupMembers: [User]
     }
     type GroupPost {
         _id: ID!
         postCreator: String!
-        postDate: String!,
-        postContent: String!,
+        postDate: String!
+        postContent: String!
         postOrigin: String!
     }
     type Reply {
@@ -43,13 +44,12 @@ const typeDefs = gql`
 
     type Query {
         me(_id: ID!): User
+        getOneGroup(_id: ID!) : Group
+        getAllGroups : [Group]
 
     }
 
-    type Mutation {
-        createUser(userName: String!, password: String!, email: String!, firstName: String, LastName: String) : Auth
-        login(email: String, password: String!) : Auth
-        createGroup(groupName: String!, techNeeded: [String], aboutGroup: String, category: String!, adminId: String!)
-    }
+ 
 
 `
+module.exports = typeDefs
