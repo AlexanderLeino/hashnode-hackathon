@@ -1,7 +1,7 @@
 const { User, Group, GroupPost, Replies} = require('../models')
 const { Types: { ObjectId } } = require('mongoose')
 const db = require('../config/connection')
-const Post = require('../models/GroupPost')
+
 
 let userId = [ 
     ObjectId(),
@@ -46,7 +46,8 @@ const userData = [
         lastName: 'Leino',
         email: 'Alexander.Leino@yahoo.com',
         password: 'notMyPassword123',
-        affliatedGroups: [groupId[4]]
+        affliatedGroups: [groupId[4]],
+        isAdmin:  groupId[4]
     },
     {
         _id: userId[1],
@@ -220,8 +221,8 @@ const seedData = async () => {
         await Group.insertMany(groupData)
         console.log('============ Groups SEEDED =============')
 
-        await Post.deleteMany({})
-        await Post.insertMany(postData)
+        await GroupPost.deleteMany({})
+        await GroupPost.insertMany(postData)
         console.log('============ Posts SEEDED =============')
 
         await Replies.deleteMany({})
@@ -229,6 +230,7 @@ const seedData = async () => {
         console.log('============ Replies SEEDED =============')
 
         process.exit(0)
+        
     } catch (err) {
         console.log(err)
         process.exit(1)
