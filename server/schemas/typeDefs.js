@@ -16,6 +16,7 @@ const typeDefs = gql`
         LinkedinLink: String
         affiliatedGroups: [Group]
         isAdmin: Group
+        skills: [SkillSet]
     }
 
     type Group {
@@ -42,14 +43,16 @@ const typeDefs = gql`
         Date: String
     }
 
+    type SkillSet {
+        _id: ID!
+        name: String!
+    }
+
     type Query {
         me(_id: ID!): User
         getOneGroup(_id: ID!) : Group
         getAllGroups : [Group]
 
     }
-
- 
-
 `
 module.exports = typeDefs
