@@ -53,6 +53,10 @@ const userSchema = new Schema (
             type: Schema.Types.ObjectId,
             ref: 'Group',
         },
+        skills: [{
+            type: Schema.Types.ObjectId,
+            ref: 'SkillSet'
+        }]
 
 
     },

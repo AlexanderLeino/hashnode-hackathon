@@ -1,4 +1,4 @@
-const { User, Group, GroupPost, Replies} = require('../models')
+const { User, Group, GroupPost, Replies, SkillSet} = require('../models')
 const { Types: { ObjectId } } = require('mongoose')
 const db = require('../config/connection')
 
@@ -35,6 +35,30 @@ let replyId = [
     ObjectId(),
 ]
 
+let skillId = [
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+    ObjectId(),
+]
 
 
 const userData = [
@@ -47,7 +71,8 @@ const userData = [
         email: 'Alexander.Leino@yahoo.com',
         password: 'notMyPassword123',
         affiliatedGroups: [groupId[4]],
-        isAdmin:  groupId[4]
+        isAdmin:  groupId[4],
+        skills: [skillId[0], skillId[2]]
     },
     {
         _id: userId[1],
@@ -210,6 +235,104 @@ const replyData = [
     }
 ]
 
+const skillData = [
+    {
+        _id: skillId[0],
+        name: 'HTML'
+
+    },
+    {
+        _id: skillId[1],
+        name: 'CSS5'
+
+    },
+    {
+        _id: skillId[2],
+        name: 'JavaScript'
+
+    },
+    {
+        _id: skillId[3],
+        name: 'MySql'
+
+    },
+    {
+        _id: skillId[4],
+        name: 'React'
+
+    },
+    {
+        _id: skillId[5],
+        name: 'Angular'
+
+    },
+    {
+        _id: skillId[6],
+        name: 'Mongodb'
+
+    },
+    {
+        _id: skillId[7],
+        name: 'Mongoose'
+
+    },
+    {
+        _id: skillId[8],
+        name: 'jQuery',
+    },
+    {
+        _id: skillId[9],
+        name: 'Sequelize',
+    },
+    {
+        _id: skillId[10],
+        name: 'Unity',
+    },
+    {
+        _id: skillId[11],
+        name: 'C++',
+    },
+    {
+        _id: skillId[12],
+        name: 'C#',
+    },
+    {
+        _id: skillId[13],
+        name: 'Remix',
+    },
+    {
+        _id: skillId[14],
+        name: 'Unreal Engine',
+    },
+    {
+        _id: skillId[15],
+        name: 'GraphQL',
+    },
+    {
+        _id: skillId[16],
+        name: 'C',
+    },
+    {
+        _id: skillId[17],
+        name: 'Java',
+    },
+    {
+        _id: skillId[18],
+        name: 'Figma',
+    },
+    {
+        _id: skillId[19],
+        name: 'BootStrap',
+    },
+    {
+        _id: skillId[20],
+        name: 'Material Ui',
+    },
+
+
+
+]
+
 const seedData = async () => {
     try {
 
@@ -229,6 +352,9 @@ const seedData = async () => {
         await Replies.insertMany(replyData)
         console.log('============ Replies SEEDED =============')
 
+        await SkillSet.deleteMany({})
+        await SkillSet.insertMany(skillData)
+        console.log('============ Skills SEEDED =============')
         process.exit(0)
         
     } catch (err) {

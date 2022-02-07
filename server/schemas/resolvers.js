@@ -3,7 +3,7 @@ const { User, Group, GroupPost, Replies } = require('../models')
 const resolvers = {
     Query: {
         me: async (parent, { _id }) => {
-            const user = await User.findById(_id).populate('affiliatedGroups')
+            const user = await User.findById(_id).populate('skills')
             return user
         },
         getOneGroup: async (parent, {_id}) => {
