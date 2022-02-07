@@ -23,7 +23,7 @@ const Group = new Schema({
     },
     groupPosts: [{
         type: Schema.Types.ObjectId,
-        ref:'Post'
+        ref:'GroupPost'
     }],
     groupMembers: [{
         type: Schema.Types.ObjectId,

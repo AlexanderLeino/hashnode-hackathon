@@ -46,7 +46,7 @@ const userData = [
         lastName: 'Leino',
         email: 'Alexander.Leino@yahoo.com',
         password: 'notMyPassword123',
-        affliatedGroups: [groupId[4]],
+        affiliatedGroups: [groupId[4]],
         isAdmin:  groupId[4]
     },
     {
@@ -56,7 +56,7 @@ const userData = [
         lastName: 'H',
         email: 'QueueDeveloper@gmail.com',
         password: 'NotTheBigQuigg123',
-        affliatedGroups: [groupId[0]]
+        affiliatedGroups: [groupId[0]]
     },
     {
         _id: userId[2],
@@ -65,7 +65,7 @@ const userData = [
         lastName: 'TheSecondAlex',
         email: 'NotAlex2Password@gmail.com',
         password: 'NotAlex2Password',
-        affliatedGroups: [groupId[3]]
+        affiliatedGroups: [groupId[3]]
     },
     {
         _id: userId[3],
@@ -74,7 +74,7 @@ const userData = [
         lastName: 'TheMan',
         email: 'HenrickWasHere@gmail.com',
         password: 'NotHenricksPassword123',
-        affliatedGroups: [groupId[4], groupId[0]]
+        affiliatedGroups: [groupId[4], groupId[0]]
     },
     {
         _id: userId[4],
@@ -83,7 +83,7 @@ const userData = [
         lastName: 'Bobby',
         email: 'RickyBobby@gmail.com',
         password: 'Number1',
-        affliatedGroups: [groupId[1]]
+        affiliatedGroups: [groupId[1]]
     },
     {
         _id: userId[5],
@@ -92,7 +92,7 @@ const userData = [
         lastName: 'Wayne',
         email: 'NotBatMan@gmail.com',
         password: 'BrucyBoy123',
-        affliatedGroups: [groupId[0]]
+        affiliatedGroups: [groupId[0]]
     },   
 ]
 

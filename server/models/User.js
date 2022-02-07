@@ -44,7 +44,7 @@ const userSchema = new Schema (
             type: String,
         },
         
-        affliatedGroups: [{
+        affiliatedGroups: [{
             type: Schema.Types.ObjectId,
             ref: 'Group'
         }],

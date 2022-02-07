@@ -48,8 +48,5 @@ const typeDefs = gql`
         getAllGroups : [Group]
 
     }
-
- 
-
 `
 module.exports = typeDefs
