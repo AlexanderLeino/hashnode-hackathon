@@ -1,5 +1,7 @@
 const { User, Group, GroupPost, Replies } = require('../models')
 
+const { signToken } = require('../utils/auth')
+
 const resolvers = {
     Query: {
         me: async (parent, { _id }) => {
@@ -13,6 +15,13 @@ const resolvers = {
         getAllGroups: async (parent, _) => {
             const allGroups = await Group.find()
             return allGroups
+        }
+    },
+    Mutation: {
+        createUser: async (parent, args) => {
+            const user = await User.create(args)
+            const token = signToken(user)
+            return { user, token }
         }
     }
 }

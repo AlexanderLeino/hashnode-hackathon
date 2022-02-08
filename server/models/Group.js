@@ -18,7 +18,7 @@ const Group = new Schema({
         required:true
     },
     adminId: {
-        type: 'String',
+        type: String,
         required: true
     },
     groupPosts: [{
