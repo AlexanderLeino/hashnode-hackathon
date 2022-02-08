@@ -48,11 +48,28 @@ const typeDefs = gql`
         name: String!
     }
 
+    input newUserInput {
+        _id: ID!
+        userName: String!
+        firstName: String
+        lastName: String
+        email: String!
+        password: String!
+        aboutMe: String
+        GithubLink: String
+        TwitterLink: String
+        hashNodeLink: String
+        LinkedinLink: String
+    }
+
     type Query {
         me(_id: ID!): User
         getOneGroup(_id: ID!) : Group
         getAllGroups : [Group]
+    }
 
+    type Mutation {
+        createUser(userName: String!, password: String!, email: String!) : Auth
     }
 `
 module.exports = typeDefs
