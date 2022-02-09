@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React from 'react';
 import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import SidebarCategories from './components/SidebarCategories'
+//import SidebarCategories from './components/SidebarCategories'
 // import QHome from './pages/QHome'
 import Login from './components/Login'
 import EditProfile from './components/EditProfile'
@@ -25,9 +25,7 @@ function App() {
 
         <Route path='/edit' element={<EditProfile />}></Route>
       </Routes>
-    </Router>
-      <SidebarCategories />
-      
+    </Router>  
     </ApolloProvider>
   );
 }
