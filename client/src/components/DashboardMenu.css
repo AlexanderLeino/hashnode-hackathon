@@ -1,0 +1,19 @@
+.dashboardIcons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+.icon {
+  cursor: pointer;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .dashboardIcons {
+    display: flex;
+    flex-direction: row;
+  }
+}
