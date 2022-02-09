@@ -4,6 +4,8 @@ import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import SidebarCategories from './components/SidebarCategories'
 import QHome from './pages/QHome'
+import Login from './components/Login'
+import EditProfile from './components/EditProfile'
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -18,6 +20,9 @@ function App() {
         <Route path='/' element={<QHome />}>
 
         </Route>
+        <Route path='/login' element={<Login />}></Route>
+
+        <Route path='/edit' element={<EditProfile />}></Route>
       </Routes>
     </Router>
       <SidebarCategories />
