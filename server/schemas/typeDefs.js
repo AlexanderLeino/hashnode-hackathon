@@ -18,6 +18,10 @@ const typeDefs = gql`
         isAdmin: Group
         skills: [SkillSet]
     }
+    type Auth {
+        token: ID!
+        user: User
+    }
 
     type Group {
         _id: ID!
@@ -70,6 +74,7 @@ const typeDefs = gql`
 
     type Mutation {
         createUser(userName: String!, password: String!, email: String!) : Auth
+        login(email: String!, password: String!): Auth
     }
 `
 module.exports = typeDefs
