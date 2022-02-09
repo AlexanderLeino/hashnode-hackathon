@@ -1,8 +1,8 @@
-import React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import React from 'react'
+import './HeroSection.css'
+import { styled } from '@mui/material/styles'
+import Paper from '@mui/material/Paper'
+import Grid from '@mui/material/Grid'
 
 const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -13,11 +13,10 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function HeroSection() {
   return (
-    <div>
-        <Box sx={{ flexGrow: 1 }}>
-            <h1>Featured Groups</h1>
+    <div className='herosection-container'>
+        <h1 className='featured-title'>Featured Groups</h1>
             <Grid container spacing={2}>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4} sx={{ cursor: 'pointer' }}>
                     <Item>
                         <Item>100 Devs</Item>
                         <br />
@@ -26,7 +25,7 @@ function HeroSection() {
                     </Item>
                     <Item>Click here for more information</Item>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4} sx={{ cursor: 'pointer' }}>
                     <Item>
                         <Item>100 Devs</Item>
                         <br />
@@ -35,7 +34,7 @@ function HeroSection() {
                     </Item>
                     <Item>Click here for more information</Item>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4} sx={{ cursor: 'pointer' }}>
                     <Item>
                         <Item>100 Devs</Item>
                         <br />
@@ -45,7 +44,6 @@ function HeroSection() {
                     <Item>Click here for more information</Item>
                 </Grid>
             </Grid>
-        </Box>
     </div>
     )
 }

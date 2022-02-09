@@ -1,0 +1,9 @@
+.herosection-container {
+  width: 70vw;
+  margin: auto;
+}
+
+.featured-title {
+  color: var(--purple);
+  margin-bottom: 2rem;
+}
