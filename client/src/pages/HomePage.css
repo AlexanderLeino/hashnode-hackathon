@@ -1,19 +1,9 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: 20px 250px;
-  grid-template-rows: auto;
-  justify-items: start;
-  align-items: center;
-}
-
-.box-one {
-  grid-column-start: 1;
-  grid-column-end: 2;
+  display: flex;
+  margin-top: 2rem;
 }
 
 .box-two {
-  grid-column-start: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  justify-items: start;
+  justify-content: center;
+  align-items: center;
 }
