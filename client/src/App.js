@@ -1,12 +1,34 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React from 'react';
 import './App.css';
-import HomePage from './pages/HomePage'
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import SidebarCategories from './components/SidebarCategories'
+// import QHome from './pages/QHome'
+import Login from './components/Login'
+import EditProfile from './components/EditProfile'
+import HomePage from "./pages/HomePage";
+
+const client = new ApolloClient({
+  uri: "/graphql",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <HomePage />
-    </div>
+    <ApolloProvider client={client}>
+    <Router>
+      <Routes>
+        <Route path='/' element={<HomePage />}>
+
+        </Route>
+        <Route path='/login' element={<Login />}></Route>
+
+        <Route path='/edit' element={<EditProfile />}></Route>
+      </Routes>
+    </Router>
+      <SidebarCategories />
+      
+    </ApolloProvider>
   );
 }
 

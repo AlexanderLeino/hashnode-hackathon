@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 
 const Reply = new Schema({
-    op: {
+    originalPost: {
         type: Schema.Types.ObjectId,
         ref: 'Post'
     },
@@ -19,7 +19,9 @@ const Reply = new Schema({
     },
 })
 
-const postReplies = model('Reply', Reply)
+const Replies = model('Reply', Reply)
+
+module.exports = Replies
 
 
 

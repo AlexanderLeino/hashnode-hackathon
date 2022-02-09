@@ -18,12 +18,12 @@ const Group = new Schema({
         required:true
     },
     adminId: {
-        type: 'String',
+        type: String,
         required: true
     },
     groupPosts: [{
         type: Schema.Types.ObjectId,
-        ref:'Post'
+        ref:'GroupPost'
     }],
     groupMembers: [{
         type: Schema.Types.ObjectId,

@@ -7,6 +7,7 @@ import DashboardMenu from '../components/DashboardMenu'
 import AboutSection from '../components/AboutSection'
 import Footer from '../components/Footer'
 
+
 function HomePage() {
   return (
     <div>

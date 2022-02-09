@@ -41,7 +41,7 @@ const userSchema = new Schema (
         },
 
         linkedinLink: {
-            type: String,
+            type: String
         },
         
         affiliatedGroups: [{
@@ -52,8 +52,11 @@ const userSchema = new Schema (
         isAdmin: {
             type: Schema.Types.ObjectId,
             ref: 'Group',
-            default: null,
         },
+        skills: [{
+            type: Schema.Types.ObjectId,
+            ref: 'SkillSet'
+        }]
 
 
     },

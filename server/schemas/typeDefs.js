@@ -1,4 +1,5 @@
-const [ gql ] = require('apollo-server-express')
+const { gql } = require('apollo-server-express')
+
 
 const typeDefs = gql`
     type User {
@@ -12,9 +13,14 @@ const typeDefs = gql`
         GithubLink: String
         TwitterLink: String
         hashNodeLink: String
-        LinkedinLink: String
+        linkedinLink: String
         affiliatedGroups: [Group]
         isAdmin: Group
+        skills: [SkillSet]
+    }
+    type Auth {
+        token: ID!
+        user: User
     }
 
     type Group {
@@ -24,14 +30,14 @@ const typeDefs = gql`
         aboutGroup: String
         category: String!
         adminId: String!
-        groupPosts: [Post]
+        groupPosts: [GroupPost]
         groupMembers: [User]
     }
     type GroupPost {
         _id: ID!
         postCreator: String!
-        postDate: String!,
-        postContent: String!,
+        postDate: String!
+        postContent: String!
         postOrigin: String!
     }
     type Reply {
@@ -41,15 +47,49 @@ const typeDefs = gql`
         Date: String
     }
 
+    type SkillSet {
+        _id: ID!
+        name: String!
+    }
+
+    input newUserInput {
+        _id: ID!
+        userName: String!
+        firstName: String
+        lastName: String
+        email: String!
+        password: String!
+        aboutMe: String
+        GithubLink: String
+        TwitterLink: String
+        hashNodeLink: String
+        linkedinLink: String
+    }
+
+    input UpdatedUser {
+        _id: ID!
+        firstName: String
+        lastName: String
+        userName: String
+        email: String
+        password: String
+        aboutMe: String
+        GithubLink: String
+        TwitterLink: String
+        hashNodeLink: String
+        linkedinLink: String
+    }
+
     type Query {
         me(_id: ID!): User
-
+        getOneGroup(_id: ID!) : Group
+        getAllGroups : [Group]
     }
 
     type Mutation {
-        createUser(userName: String!, password: String!, email: String!, firstName: String, LastName: String) : Auth
-        login(email: String, password: String!) : Auth
-        createGroup(groupName: String!, techNeeded: [String], aboutGroup: String, category: String!, adminId: String!)
+        createUser(userName: String!, password: String!, email: String!) : Auth
+        login(email: String!, password: String!): Auth
+        updateUser(user: UpdatedUser): User
     }
-
 `
+module.exports = typeDefs

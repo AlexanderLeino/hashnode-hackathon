@@ -9,7 +9,7 @@ const Post = new Schema ({
     postDate: {
         type: Date,
         default: Date.now,
-        unique: true
+        
     },
     postContent: {
         type: String,
@@ -21,6 +21,6 @@ const Post = new Schema ({
     },
 })
 
-const Post = model('Post', Post);
+const GroupPost = model('Post', Post);
   
-module.exports = Post;
+module.exports = GroupPost;
