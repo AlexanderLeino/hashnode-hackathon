@@ -14,6 +14,15 @@ function QHome (){
 
     const [createUser] = useMutation(CREATE_USER);
 
+    const handleLogOut = () => {
+        Auth.logout();
+      };
+
+    const editProfile = () => {
+        window.location = '/edit'
+    }
+
+    console.log(Auth.loggedIn())
     const handleFormSubmit = async(e) => {
         e.preventDefault();
 
@@ -44,8 +53,9 @@ function QHome (){
 
     return(
         <>
-        
-        <form onSubmit={handleFormSubmit}>
+        {!Auth.loggedIn() ? (
+            
+            <form onSubmit={handleFormSubmit}>
             <input placeholder='username'
             type='text'
             id='username'
@@ -65,7 +75,20 @@ function QHome (){
             onChange={({ target }) => setPassword(target.value)}>
             </input>
             <button type="submit">SignUp</button>
+            <p>or</p>
+            
         </form>
+           
+            
+            
+        ) : (
+            <div>
+                <button onClick={handleLogOut}>Logout</button>
+                <button onClick={editProfile}>editProfile</button>
+            </div>
+            
+        )}
+        
         </>
     )
 }

@@ -41,7 +41,7 @@ const userSchema = new Schema (
         },
 
         linkedinLink: {
-            type: String,
+            type: String
         },
         
         affiliatedGroups: [{

@@ -49,6 +49,22 @@ const resolvers = {
             } catch (err) {
                 console.log(err)
             }
+        },
+        updateUser: async (parent, { user }) => {
+            console.log('I')
+            const updatedUser = await User.findByIdAndUpdate(user._id, {
+                $set: {
+                    ...user
+                }
+            }, {
+                new: true
+            })
+            return updatedUser
+            // return updatedUser.populate([
+            //     {
+                    
+            //     }
+            // ])
         }
     }
 }

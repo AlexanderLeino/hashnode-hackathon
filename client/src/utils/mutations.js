@@ -20,3 +20,21 @@ export const LOG_IN = gql`
         }
     }
 `
+
+export const UPDATE_USER = gql`
+    mutation UpdateUser($user: UpdatedUser) {
+        updateUser(user: $user) {
+            _id
+            firstName
+            lastName
+            userName
+            email
+            password
+            aboutMe
+            GithubLink
+            TwitterLink
+            hashNodeLink
+            linkedinLink
+    }
+}
+`

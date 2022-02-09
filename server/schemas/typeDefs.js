@@ -13,7 +13,7 @@ const typeDefs = gql`
         GithubLink: String
         TwitterLink: String
         hashNodeLink: String
-        LinkedinLink: String
+        linkedinLink: String
         affiliatedGroups: [Group]
         isAdmin: Group
         skills: [SkillSet]
@@ -63,7 +63,21 @@ const typeDefs = gql`
         GithubLink: String
         TwitterLink: String
         hashNodeLink: String
-        LinkedinLink: String
+        linkedinLink: String
+    }
+
+    input UpdatedUser {
+        _id: ID!
+        firstName: String
+        lastName: String
+        userName: String
+        email: String
+        password: String
+        aboutMe: String
+        GithubLink: String
+        TwitterLink: String
+        hashNodeLink: String
+        linkedinLink: String
     }
 
     type Query {
@@ -75,6 +89,7 @@ const typeDefs = gql`
     type Mutation {
         createUser(userName: String!, password: String!, email: String!) : Auth
         login(email: String!, password: String!): Auth
+        updateUser(user: UpdatedUser): User
     }
 `
 module.exports = typeDefs
