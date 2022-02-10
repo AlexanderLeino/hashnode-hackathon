@@ -8,6 +8,10 @@ import AboutSection from '../components/AboutSection'
 import Footer from '../components/Footer'
 
 
+
+
+
+
 function HomePage() {
   return (
     <div>
