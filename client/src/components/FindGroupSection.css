@@ -1,0 +1,20 @@
+.find-group-container {
+  margin-top: 2rem;
+}
+
+.find-group-title {
+  color: var(--purple);
+}
+
+.form-container {
+}
+
+.find-group-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find-group-button {
+  margin: auto;
+}
