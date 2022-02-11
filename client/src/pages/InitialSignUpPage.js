@@ -42,7 +42,7 @@ function InitialSignUpPage() {
             <SignUpStepper />
         </Container>
 
-    <Container maxWidth='xs' style={{padding:'1.25rem', borderRadius:'25px', background:'white', boxShadow:'5px 10px 18px  black', border: '1px solid black'}}>
+    <Container maxWidth='sm' style={{padding:'1.25rem', borderRadius:'25px', background:'white', boxShadow:'5px 10px 18px  black', border: '1px solid black'}}>
         <form style={{display:'flex', flexDirection:'column'}}>
             <label style={{fontSize:'1.25rem', marginBottom: '.5rem'}}>Email:</label>
                 <input type='email' style={{alignText:'left', marginBottom:'1rem', height:'1.50rem'}}/>

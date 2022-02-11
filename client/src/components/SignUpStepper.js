@@ -1,16 +1,17 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
+import InitialSignUpPage from '../pages/InitialSignUpPage';
 
 
 const steps = ['Who Are You?', 'Select Preferred Technologies', 'Account Creation Complete'];
 
 export default function SignUpStepper() {
 
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = useState(0);
 
 
   const handleNext = () => {
@@ -20,7 +21,7 @@ export default function SignUpStepper() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-   
+  <InitialSignUpPage HandleNext={handleNext} HandleBack={handleNext}/>
   return (
     <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep}>
@@ -52,7 +53,6 @@ export default function SignUpStepper() {
             </Button>
           </Box>
         </>
-      
     </Box>
   );
 }
