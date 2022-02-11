@@ -31,7 +31,7 @@ function QMakeGroup(){
 
         const NewGroup = {
             groupName: groupName,
-            techNeeded: ["HTML"],
+            techNeeded: [ "HTML"],
             aboutGroup: aboutGroup,
             category: 'frontEnd',
             adminId: thisUser.data._id,
