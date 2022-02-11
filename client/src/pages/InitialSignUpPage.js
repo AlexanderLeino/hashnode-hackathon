@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, {useState} from 'react'
 import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
@@ -7,10 +7,12 @@ import Button from '@mui/material/Button'
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
+import SignUpForm from '../components/SignUpForm'
+
 
 function InitialSignUpPage() {
     const steps = ['Who Are You?', 'Select Preferred Technologies', 'Account Creation Complete'];
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = useState(0);
 
 
     const handleNext = () => {
@@ -56,10 +58,9 @@ function InitialSignUpPage() {
       <Stepper activeStep={activeStep}>
         {steps.map((label) => {
           const stepProps = {};
-          const labelProps = {};
           return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
+            <Step  key={label} {...stepProps}>
+              <StepLabel >{label}</StepLabel>
             </Step>
           );
         })}
@@ -71,22 +72,11 @@ function InitialSignUpPage() {
         </>
     </Box>
         </Container>
-
-    <Container maxWidth='sm' style={{padding:'1.25rem', borderRadius:'25px', background:'white', boxShadow:'5px 10px 18px  black', border: '1px solid black'}}>
-        <form style={{display:'flex', flexDirection:'column'}}>
-            <label style={{fontSize:'1.25rem', marginBottom: '.5rem'}}>Email:</label>
-                <input type='email' style={{alignText:'left', marginBottom:'1rem', height:'1.50rem'}}/>
-                <label style={{fontSize:'1.25rem', marginBottom: '.5rem'}}>Username:</label>
-                <input type='text' style={{alignText:'left', marginBottom:'1rem',  height:'1.50rem'}}/>
-                <label style={{fontSize:'1.25rem', marginBottom: '.5rem'}}>Password:</label>
-                <input type='password' style={{alignText:'left', marginBottom:'1rem',  height:'1.50rem'}}/>
-                <label style={{fontSize:'1.25rem', marginBottom: '.5rem'}}>Confirm Password</label>
-                <input type='password' style={{alignText:'left', marginBottom:'1rem',  height:'1.50rem'}}/>
-        </form>
-    </Container>
+        <SignUpForm />
+ 
         <Box style={{display:'flex', justifyContent:'flex-end'}}>
             <Button variant='contained' onClick={handleBack} disabled={activeStep === 0}>Back</Button>
-            <Button variant='contained' onClick={handleNext}>Next</Button>
+            <Button variant='contained' onClick={handleNext} disabled={activeStep === 3}>Next</Button>
         </Box>
     </Container>
 
