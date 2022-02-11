@@ -44,7 +44,7 @@ const userSchema = new Schema (
             type: String
         },
         
-        affiliatedGroups: [{
+        groupMemberOf: [{
             type: Schema.Types.ObjectId,
             ref: 'Group'
         }],
@@ -53,6 +53,7 @@ const userSchema = new Schema (
             type: Schema.Types.ObjectId,
             ref: 'Group',
         },
+        
         skills: [{
             type: Schema.Types.ObjectId,
             ref: 'SkillSet'

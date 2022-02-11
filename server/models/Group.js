@@ -7,8 +7,7 @@ const Group = new Schema({
         unique: true
     },
     techNeeded: [{
-        type: String,
-        unique: true
+        type: String
     }],
     aboutGroup: {
         type: String
@@ -21,10 +20,6 @@ const Group = new Schema({
         type: String,
         required: true
     },
-    groupPosts: [{
-        type: Schema.Types.ObjectId,
-        ref:'GroupPost'
-    }],
     groupMembers: [{
         type: Schema.Types.ObjectId,
         ref: 'User'

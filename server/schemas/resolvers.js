@@ -6,7 +6,15 @@ const { signToken } = require('../utils/auth')
 const resolvers = {
     Query: {
         me: async (parent, { _id }) => {
-            const user = await User.findById(_id).populate('skills')
+            const user = await User.findById(_id).populate([{
+                path: 'groupMemberOf',
+                model: 'Group'
+            },
+            {
+                path: 'skills',
+                model:'SkillSet'
+            }
+            ])
             return user
         },
         getOneGroup: async (parent, {_id}) => {
@@ -65,6 +73,16 @@ const resolvers = {
                     
             //     }
             // ])
+        },
+        createGroup: async (parent, args) => {
+            try{
+                console.log(args)
+                const group = await Group.create(args)
+                return group
+            } catch (err){
+                console.log(err)
+                return err
+            }
         }
     }
 }

@@ -9,6 +9,10 @@ const db = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const bodyParser = require("body-parser")
+
+
+
 const server = new ApolloServer({
   resolvers,
   typeDefs,
@@ -17,6 +21,7 @@ const server = new ApolloServer({
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
