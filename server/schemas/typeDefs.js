@@ -15,7 +15,7 @@ const typeDefs = gql`
         TwitterLink: String
         hashNodeLink: String
         linkedinLink: String
-        affiliatedGroups: [Group]
+        groupMemberOf: [Group]
         isAdmin: Group
         skills: [SkillSet]
     }
@@ -31,7 +31,7 @@ const typeDefs = gql`
         aboutGroup: String
         category: String
         adminId: String
-        groupMembers: [String]
+        groupMembers: [User]
     }
     type GroupPost {
         _id: ID!
