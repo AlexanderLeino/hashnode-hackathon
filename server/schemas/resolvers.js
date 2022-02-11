@@ -65,6 +65,16 @@ const resolvers = {
                     
             //     }
             // ])
+        },
+        createGroup: async (parent, args) => {
+            try{
+                console.log(args)
+                const group = await Group.create(args)
+                return group
+            } catch (err){
+                console.log(err)
+                return err
+            }
         }
     }
 }

@@ -6,9 +6,13 @@ import HeroSection from '../components/HeroSection'
 import DashboardMenu from '../components/DashboardMenu'
 import AboutSection from '../components/AboutSection'
 import Footer from '../components/Footer'
+import Auth from '../utils/auth'
 
 
 function HomePage() {
+  const userData = Auth.getProfile()
+
+  console.log(userData)
   return (
     <div>
         <SearchBar />

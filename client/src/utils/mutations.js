@@ -38,3 +38,18 @@ export const UPDATE_USER = gql`
     }
 }
 `
+
+export const CREATE_GROUP = gql`
+    mutation CreateGroup($group: NewGroup){
+        createGroup(newGroup: $group)
+        groupName
+        techNeeded
+        aboutGroup
+        category
+        adminId
+        groupMembers {
+            _id
+        }
+        
+    }
+`

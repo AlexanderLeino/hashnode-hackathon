@@ -21,10 +21,6 @@ const Group = new Schema({
         type: String,
         required: true
     },
-    groupPosts: [{
-        type: Schema.Types.ObjectId,
-        ref:'GroupPost'
-    }],
     groupMembers: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
