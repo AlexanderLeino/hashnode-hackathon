@@ -18,7 +18,11 @@ const resolvers = {
             return user
         },
         getOneGroup: async (parent, {_id}) => {
-            const group = await Group.findById(_id)
+            const group = await Group.findById(_id).populate([{
+                path: 'groupMembers',
+                model: 'User'
+            }
+        ])
             return group
         },
         getAllGroups: async (parent, _) => {

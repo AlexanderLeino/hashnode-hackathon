@@ -7,6 +7,7 @@ import DashboardMenu from '../components/DashboardMenu'
 import AboutSection from '../components/AboutSection'
 import Footer from '../components/Footer'
 import Auth from '../utils/auth'
+import QHome from './QHome'
 
 
 function HomePage() {
@@ -14,7 +15,8 @@ function HomePage() {
 
   console.log(userData)
   return (
-    <div>
+    <>
+    {!userData == null ? <div>
         <SearchBar />
           <div className='wrapper'>
             <div className='box-one'>
@@ -27,8 +29,15 @@ function HomePage() {
         <HeroSection />
         <AboutSection />
         <Footer />
+    </div> : 
+    
+    <div>
+      <QHome />
     </div>
-    )
+    }
+    
+    </>
+  )
 }
 
 export default HomePage;
