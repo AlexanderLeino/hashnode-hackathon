@@ -28,22 +28,31 @@ function QMakeGroup(){
                 }
             }
         }
+
+        const NewGroup = {
+            groupName: groupName,
+            techNeeded: ["HTML"],
+            aboutGroup: aboutGroup,
+            category: 'frontEnd',
+            adminId: thisUser.data._id,
+            groupMembers: [thisUser.data._id]
+        }
         
 
-        console.log(techNeeded)
-        const theGroup = await createGroup({
-            variables: {
-                group: {
-                    groupName: groupName,
-                    techNeeded: ["HTML"],
-                    aboutGroup: aboutGroup,
-                    category: 'frontEnd',
-                    adminId: thisUser.data._id,
-                    groupMembers:[thisUser.data._id]
+        console.log(NewGroup)
+        try{
+            const theGroup = await createGroup({
+                variables: {
+                    ...NewGroup
                 }
-            }
-        })
-        console.log(theGroup)
+            })
+            console.log(theGroup)
+        }
+        catch(err){
+            console.log(err)
+        }
+        
+        //console.log(theGroup)
         
 
         

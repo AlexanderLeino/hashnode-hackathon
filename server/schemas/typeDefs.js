@@ -26,11 +26,11 @@ const typeDefs = gql`
 
     type Group {
         _id: ID!
-        groupName: String!
+        groupName: String
         techNeeded: [String]
         aboutGroup: String
-        category: String!
-        adminId: String!
+        category: String
+        adminId: String
         groupMembers: [ID]
     }
     type GroupPost {
@@ -84,8 +84,8 @@ const typeDefs = gql`
         groupName: String!
         techNeeded: [String]
         aboutGroup: String!
-        category: String
-        adminId: String
+        category: String!
+        adminId: String!
         groupMembers: [ID]
     }
 
@@ -99,7 +99,7 @@ const typeDefs = gql`
         createUser(userName: String!, password: String!, email: String!) : Auth
         login(email: String!, password: String!): Auth
         updateUser(user: UpdatedUser): User
-        createGroup(group: NewGroup): Group
+        createGroup(newGroup: NewGroup): Group
     }
 `
 module.exports = typeDefs
