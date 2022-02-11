@@ -7,8 +7,7 @@ const Group = new Schema({
         unique: true
     },
     techNeeded: [{
-        type: String,
-        unique: true
+        type: String
     }],
     aboutGroup: {
         type: String

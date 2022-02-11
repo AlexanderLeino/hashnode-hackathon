@@ -31,7 +31,7 @@ const typeDefs = gql`
         aboutGroup: String
         category: String
         adminId: String
-        groupMembers: [ID]
+        groupMembers: [String]
     }
     type GroupPost {
         _id: ID!
@@ -80,14 +80,7 @@ const typeDefs = gql`
         hashNodeLink: String
         linkedinLink: String
     }
-    input NewGroup {
-        groupName: String!
-        techNeeded: [String]
-        aboutGroup: String!
-        category: String!
-        adminId: String!
-        groupMembers: [ID]
-    }
+
 
     type Query {
         me(_id: ID!): User
@@ -99,7 +92,7 @@ const typeDefs = gql`
         createUser(userName: String!, password: String!, email: String!) : Auth
         login(email: String!, password: String!): Auth
         updateUser(user: UpdatedUser): User
-        createGroup(newGroup: NewGroup): Group
+        createGroup(groupName: String!, techNeeded: [String], aboutGroup: String!, category: String!, adminId: String!, groupMembers: [String]): Group
     }
 `
 module.exports = typeDefs
