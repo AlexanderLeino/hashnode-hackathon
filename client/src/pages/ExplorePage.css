@@ -1,0 +1,73 @@
+.explore-page-container {
+  margin-top: 4rem;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explore-page-title {
+  color: var(--purple);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.start-title {
+  color: var(--purple);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.button-group-container {
+  margin-bottom: 4rem;
+}
+
+.button-group-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore-page-grid {
+  margin-bottom: 4rem;
+}
+
+.find-group-title {
+  text-align: center;
+  color: var(--purple);
+  margin-bottom: 2rem;
+}
+
+.find-group-grid {
+  margin-bottom: 4rem;
+}
+
+.find-group-filter-button {
+  width: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.find-group-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+@media only screen and (max-width: 769px) {
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .filter-inputs-container {
+    margin-top: 2rem;
+  }
+}

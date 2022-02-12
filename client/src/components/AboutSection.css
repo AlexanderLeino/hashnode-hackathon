@@ -2,20 +2,23 @@
   display: flex;
   justify-content: space-between;
   margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .about-section-description {
   margin-top: 2rem;
+  text-align: center;
 }
 
 .about-section-title {
   margin-top: 2rem;
   color: var(--purple);
+  text-align: center;
 }
 
 .about-container > div {
   width: 33%;
+  text-align: center;
 }
 
 .about-container-one > h3 {

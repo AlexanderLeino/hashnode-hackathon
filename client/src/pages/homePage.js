@@ -15,8 +15,10 @@ function HomePage() {
             <div className='box-one'>
               <DashboardMenu />
             </div>
+            <div className='box-two'>
+              <HeroSection />
+            </div>
           </div>
-        <HeroSection />
         <AboutSection />
         <Footer />
     </div>

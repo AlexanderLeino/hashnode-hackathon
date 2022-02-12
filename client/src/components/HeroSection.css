@@ -1,9 +1,13 @@
 .herosection-container {
   width: 70vw;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .featured-title {
   color: var(--purple);
   margin-bottom: 2rem;
+  text-align: center;
 }

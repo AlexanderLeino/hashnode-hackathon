@@ -2,4 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 4rem;
+}
+
+.search-button {
+  height: 3.5rem;
+}
+
+@media only screen and (max-width: 425px) {
+  .searchbar-container {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

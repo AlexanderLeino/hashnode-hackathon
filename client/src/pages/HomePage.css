@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 20px 250px;
+  grid-template-columns: 1fr 6fr;
   grid-template-rows: auto;
   justify-items: start;
   align-items: center;
@@ -8,12 +8,26 @@
 
 .box-one {
   grid-column-start: 1;
-  grid-column-end: 2;
 }
 
 .box-two {
-  grid-column-start: 3;
+  grid-column-start: 2;
   grid-row-start: 1;
-  grid-row-end: 2;
-  justify-items: start;
+  justify-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box-one {
+    grid-row-start: 1;
+    width: 90vw;
+  }
+
+  .box-two {
+    grid-row-start: 2;
+  }
 }

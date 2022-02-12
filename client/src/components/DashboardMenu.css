@@ -1,19 +1,25 @@
 .dashboardIcons {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 2rem;
   margin-left: 4rem;
+  height: 50vh;
 }
 
 .icon {
   cursor: pointer;
-  margin-bottom: 4rem;
 }
 
 @media only screen and (max-width: 768px) {
   .dashboardIcons {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    height: 10vh;
   }
 }

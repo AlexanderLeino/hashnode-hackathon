@@ -16,9 +16,9 @@ export default function ColorToggleButton() {
       exclusive
       onChange={handleChange}
     >
-      <ToggleButton value="web">Web</ToggleButton>
-      <ToggleButton value="android">Android</ToggleButton>
-      <ToggleButton value="ios">iOS</ToggleButton>
+      <ToggleButton value="web">Today</ToggleButton>
+      <ToggleButton value="android">This Week</ToggleButton>
+      <ToggleButton value="ios">This Month</ToggleButton>
     </ToggleButtonGroup>
   );
 }
