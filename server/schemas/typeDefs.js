@@ -92,7 +92,7 @@ const typeDefs = gql`
         createUser(userName: String!, password: String!, email: String!) : Auth
         login(email: String!, password: String!): Auth
         updateUser(user: UpdatedUser): User
-        createGroup(groupName: String!, techNeeded: [String], aboutGroup: String!, category: String!, adminId: String!, groupMembers: [String]): Group
+        createGroup(groupName: String!, techNeeded: [String], aboutGroup: String!, category: String!, adminId: String!): Group
     }
 `
 module.exports = typeDefs
