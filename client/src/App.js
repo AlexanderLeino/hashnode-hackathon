@@ -1,18 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Group from './pages/Group';
+import Nav from './components/nav/Nav';
+import Group from './pages/group/Group';
 import Home from './pages/Home';
+import Explore from './pages/explore/Explore';
 //import Button from './components/Button'
 
 function App() {
   return (
     <BrowserRouter>
-    {/* nav would go right here */}
-      <div className='App'>
+    <div className='App'>
+      <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="group" element={<Group />} />
+          <Route path="explore" element={<Explore />} />
+
         </Routes>
       </div>
     </BrowserRouter>
