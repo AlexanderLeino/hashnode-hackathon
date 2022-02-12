@@ -40,14 +40,13 @@ export const UPDATE_USER = gql`
 `
 
 export const CREATE_GROUP = gql`
-mutation CreateGroup($groupName: String!, $aboutGroup: String!, $category: String!, $adminId: String!, $techNeeded: [String], $groupMembers: [String]) {
-    createGroup(groupName: $groupName, aboutGroup: $aboutGroup, category: $category, adminId: $adminId, techNeeded: $techNeeded, groupMembers: $groupMembers){
+mutation CreateGroup($groupName: String!, $aboutGroup: String!, $category: String!, $adminId: String!, $techNeeded: [String]) {
+    createGroup(groupName: $groupName, aboutGroup: $aboutGroup, category: $category, adminId: $adminId, techNeeded: $techNeeded ){
             groupName
             techNeeded
             aboutGroup
             category
             adminId
-            groupMembers
         } 
     }
 `

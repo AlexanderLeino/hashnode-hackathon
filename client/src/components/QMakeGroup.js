@@ -35,7 +35,6 @@ function QMakeGroup(){
             aboutGroup: aboutGroup,
             category: 'frontEnd',
             adminId: thisUser.data._id,
-            groupMembers: [thisUser.data._id]
         }
         
 
