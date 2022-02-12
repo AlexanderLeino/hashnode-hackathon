@@ -5,7 +5,11 @@ import decode from 'jwt-decode';
 class AuthService {
   // get user data
   getProfile() {
-    return decode(this.getToken());
+    if (localStorage.getItem('id_token') != null){ //checks for token first so that we don't break anything
+      return decode(this.getToken());
+    }
+    else return null
+    
   }
 
   // check if user's logged in

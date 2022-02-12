@@ -2,6 +2,7 @@ const { gql } = require('apollo-server-express')
 
 
 const typeDefs = gql`
+
     type User {
         _id: ID!
         userName: String!
@@ -14,7 +15,7 @@ const typeDefs = gql`
         TwitterLink: String
         hashNodeLink: String
         linkedinLink: String
-        affiliatedGroups: [Group]
+        groupMemberOf: [Group]
         isAdmin: Group
         skills: [SkillSet]
     }
@@ -25,12 +26,11 @@ const typeDefs = gql`
 
     type Group {
         _id: ID!
-        groupName: String!
+        groupName: String
         techNeeded: [String]
         aboutGroup: String
-        category: String!
-        adminId: String!
-        groupPosts: [GroupPost]
+        category: String
+        adminId: String
         groupMembers: [User]
     }
     type GroupPost {
@@ -51,6 +51,7 @@ const typeDefs = gql`
         _id: ID!
         name: String!
     }
+    
 
     input newUserInput {
         _id: ID!
@@ -80,6 +81,7 @@ const typeDefs = gql`
         linkedinLink: String
     }
 
+
     type Query {
         me(_id: ID!): User
         getOneGroup(_id: ID!) : Group
@@ -90,6 +92,7 @@ const typeDefs = gql`
         createUser(userName: String!, password: String!, email: String!) : Auth
         login(email: String!, password: String!): Auth
         updateUser(user: UpdatedUser): User
+        createGroup(groupName: String!, techNeeded: [String], aboutGroup: String!, category: String!, adminId: String!): Group
     }
 `
 module.exports = typeDefs

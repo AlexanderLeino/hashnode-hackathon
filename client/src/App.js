@@ -8,6 +8,8 @@ import Login from './components/Login'
 import EditProfile from './components/EditProfile'
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
+import QMakeGroup from "./components/QMakeGroup";
+
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -19,14 +21,11 @@ function App() {
     <ApolloProvider client={client}>
     <Router>
       <Routes>
-        <Route path='/' element={<HomePage />}>
-
-        </Route>
+        <Route path='/' element={<HomePage />}></Route>
         <Route path='/login' element={<Login />}></Route>
-
         <Route path='/edit' element={<EditProfile />}></Route>
-
         <Route path="/signUp" element={<SignUpPage/>}></Route>
+        <Route path='/makeGroup' element={<QMakeGroup />}></Route>
       </Routes>
     </Router>  
     </ApolloProvider>
