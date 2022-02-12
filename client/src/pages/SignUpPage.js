@@ -10,6 +10,8 @@ import StepLabel from '@mui/material/StepLabel';
 import SignUpForm from '../components/SignUpForm'
 
 
+
+
 function InitialSignUpPage() {
     const steps = ['Who Are You?', 'Select Preferred Technologies', 'Account Creation Complete'];
     const [activeStep, setActiveStep] = useState(0);
@@ -55,12 +57,16 @@ function InitialSignUpPage() {
         
         <Container maxWidth='sm'>
         <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={activeStep}>
+      <Stepper styles={{}} activeStep={activeStep}>
         {steps.map((label) => {
           const stepProps = {};
           return (
             <Step  key={label} {...stepProps}>
-              <StepLabel >{label}</StepLabel>
+              <StepLabel StepIconProps={{classes: {
+                text: {
+                  fill: 'green'
+                }
+              }}}>{label}</StepLabel>
             </Step>
           );
         })}
