@@ -9,6 +9,7 @@ import EditProfile from './components/EditProfile'
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import QMakeGroup from "./components/QMakeGroup";
+import GroupPage from "./pages/GroupPage";
 
 
 const client = new ApolloClient({
@@ -26,6 +27,7 @@ function App() {
         <Route path='/edit' element={<EditProfile />}></Route>
         <Route path="/signUp" element={<SignUpPage/>}></Route>
         <Route path='/makeGroup' element={<QMakeGroup />}></Route>
+        <Route path="group" element={<GroupPage />}></Route>
       </Routes>
     </Router>  
     </ApolloProvider>
